@@ -1,10 +1,10 @@
 package org.echocat.kata.java.part1.model;
 
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Data
+@ToString
+@Builder
 public class Author {
 
     private String mail;
