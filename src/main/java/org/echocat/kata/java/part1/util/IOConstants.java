@@ -1,4 +1,4 @@
-package org.echocat.kata.java.part1.io.util;
+package org.echocat.kata.java.part1.util;
 
 public class IOConstants {
 

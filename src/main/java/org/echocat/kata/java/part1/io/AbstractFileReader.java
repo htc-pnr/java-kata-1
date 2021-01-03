@@ -1,14 +1,15 @@
 package org.echocat.kata.java.part1.io;
 
-import org.echocat.kata.java.part1.io.FileReader;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public abstract class AbstractFileReader implements FileReader {
+import static org.echocat.kata.java.part1.util.IOConstants.SEMICOLON_DELIMITER;
+
+public abstract class AbstractFileReader implements IFileReader {
 
     @Override
     public List read(String fileName) throws FileNotFoundException{
@@ -19,13 +20,14 @@ public abstract class AbstractFileReader implements FileReader {
             scanner.nextLine();
 
             while (scanner.hasNextLine()) {
-                records.add(getRecordFromLine(scanner.nextLine()));
+                String line = scanner.nextLine();
+                records.add(getRecordFromLine(Arrays.asList(line.split(SEMICOLON_DELIMITER))));
             }
         }
 
         return records;
     }
 
-    protected abstract Object getRecordFromLine(String nextLine);
+    protected abstract Object getRecordFromLine(List<String> cells);
 
 }

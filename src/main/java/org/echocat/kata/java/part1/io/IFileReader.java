@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.util.List;
 
-public interface FileReader {
+public interface IFileReader {
 
     List read(String fileName) throws FileNotFoundException;
 }
